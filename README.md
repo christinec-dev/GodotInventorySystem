@@ -24,6 +24,9 @@ This is the final source code for my Godot Inventory System series that I made f
 - Centralized management of inventory and player references.
 - Signals for updating UI when inventory changes.
 
+## Resources
+- [Steps](https://excalidraw.com/#json=cjPPFEnlQM-7r-plC8UJ4,iX6E_Q0e7USp2IAlVJQM5g)
+
 ## Inventory Preview
 ![image](https://github.com/christinec-dev/GodotInventorySystem/assets/87696858/d0c0023f-ce75-4e65-8d2b-93ce11953df3)
 ![image](https://github.com/christinec-dev/GodotInventorySystem/assets/87696858/6a63bf91-5dbb-4a6f-9b9a-2d1462ee521a)
