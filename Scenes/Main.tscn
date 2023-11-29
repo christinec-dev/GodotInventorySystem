@@ -1,0 +1,34 @@
+[gd_scene load_steps=7 format=3 uid="uid://d06g5f42u8jdf"]
+
+[ext_resource type="Script" path="res://Scripts/Main.gd" id="1_1spni"]
+[ext_resource type="PackedScene" uid="uid://ceybwx01k7cpj" path="res://Scenes/Player.tscn" id="1_abj56"]
+[ext_resource type="PackedScene" uid="uid://crb8budhg8bo4" path="res://TileMap.tscn" id="2_1h61q"]
+[ext_resource type="PackedScene" uid="uid://dmqra368itmb1" path="res://Scenes/Inventory_Item.tscn" id="2_5j78g"]
+[ext_resource type="Texture2D" uid="uid://b8aitvnwcwy0u" path="res://Assets/Icons/icon19.png" id="10_ar32i"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wr2do"]
+size = Vector2(500, 500)
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_1spni")
+
+[node name="TileMap" parent="." instance=ExtResource("2_1h61q")]
+
+[node name="Items" type="Node2D" parent="."]
+position = Vector2(230, 150)
+
+[node name="Item" parent="Items" instance=ExtResource("2_5j78g")]
+position = Vector2(227, 148)
+item_type = "Quest Item"
+item_name = "Key"
+item_texture = ExtResource("10_ar32i")
+item_effect = ""
+
+[node name="ItemSpawnArea" type="Area2D" parent="."]
+position = Vector2(669, 400)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ItemSpawnArea"]
+shape = SubResource("RectangleShape2D_wr2do")
+
+[node name="Player" parent="." instance=ExtResource("1_abj56")]
+position = Vector2(230, 150)
