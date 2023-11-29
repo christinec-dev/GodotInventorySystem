@@ -1,4 +1,4 @@
-# GodotInventorySystem
+# Godot Inventory System
 This is the final source code for my Godot Inventory System series that I made for my YouTube channel. It consists of a grid-based inventory system where players can add, remove, or use items. 😊
 
 ## Outline of Features/Functionalities of this System:
