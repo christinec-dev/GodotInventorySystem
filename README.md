@@ -32,6 +32,6 @@ This is the final source code for my Godot Inventory System series that I made f
 ![image](https://github.com/christinec-dev/GodotInventorySystem/assets/87696858/0615ede6-2af9-4a21-aaca-c41c87add9c2)
 
 ## Asset Creditations
-[https://seliel-the-shaper.itch.io/character-base](https://seliel-the-shaper.itch.io/character-base)
-[https://quintino-pixels.itch.io/assorted-icons](https://quintino-pixels.itch.io/assorted-icons)
-[Sprout Lands - Asset Pack by Cup Nooble (itch.io)](https://cupnooble.itch.io/sprout-lands-asset-pack)
+- [https://seliel-the-shaper.itch.io/character-base](https://seliel-the-shaper.itch.io/character-base)
+- [https://quintino-pixels.itch.io/assorted-icons](https://quintino-pixels.itch.io/assorted-icons)
+- [Sprout Lands - Asset Pack by Cup Nooble (itch.io)](https://cupnooble.itch.io/sprout-lands-asset-pack)
