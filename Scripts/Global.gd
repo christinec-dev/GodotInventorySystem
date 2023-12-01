@@ -70,3 +70,8 @@ func adjust_drop_position(position):
 			position += random_offset
 			break
 	return position
+
+# Iincrease inventory size dynamically
+func increase_inventory_size(extra_slots):
+	inventory.resize(inventory.size() + extra_slots)
+	inventory_updated.emit()

@@ -27,7 +27,7 @@ func _process(_delta):
 	# Add item to inventory if player presses "E" within range
 	if player_in_range and Input.is_action_just_pressed("ui_add"):
 		pickup_item()
-
+#comment
 # Add item to inventory
 func pickup_item():
 	var item = {
@@ -42,6 +42,7 @@ func pickup_item():
 		Global.add_item(item)
 		self.queue_free()
 
+# comment 
 # If player is in range, show UI and make item pickable
 func _on_area_2d_body_entered(body):
 	if body.is_in_group("Player"):

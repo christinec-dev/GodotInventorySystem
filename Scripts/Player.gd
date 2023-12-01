@@ -52,5 +52,8 @@ func apply_item_effect(item):
 		"Stamina":
 			speed += 50
 			print("Speed increased to ", speed)
+		"Slot Boost":
+			Global.increase_inventory_size(5)
+			print("Inventory increased to ", Global.inventory.size())
 		_:
-			print("No effect for this item")	
+			print("No effect for this item")

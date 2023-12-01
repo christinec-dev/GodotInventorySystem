@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://d06g5f42u8jdf"]
+[gd_scene load_steps=8 format=3 uid="uid://d06g5f42u8jdf"]
 
 [ext_resource type="Script" path="res://Scripts/Main.gd" id="1_1spni"]
 [ext_resource type="PackedScene" uid="uid://ceybwx01k7cpj" path="res://Scenes/Player.tscn" id="1_abj56"]
-[ext_resource type="PackedScene" uid="uid://crb8budhg8bo4" path="res://TileMap.tscn" id="2_1h61q"]
+[ext_resource type="PackedScene" uid="uid://crb8budhg8bo4" path="res://Scenes/TileMap.tscn" id="2_1h61q"]
 [ext_resource type="PackedScene" uid="uid://dmqra368itmb1" path="res://Scenes/Inventory_Item.tscn" id="2_5j78g"]
-[ext_resource type="Texture2D" uid="uid://b8aitvnwcwy0u" path="res://Assets/Icons/icon19.png" id="10_ar32i"]
+[ext_resource type="Texture2D" uid="uid://c107iw2emkb2n" path="res://Assets/Icons/icon17.png" id="4_5soh4"]
+[ext_resource type="Texture2D" uid="uid://by0onh1xpbew8" path="res://Assets/Icons/icon11.png" id="5_kla16"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wr2do"]
 size = Vector2(500, 500)
@@ -18,11 +19,18 @@ script = ExtResource("1_1spni")
 position = Vector2(230, 150)
 
 [node name="Item" parent="Items" instance=ExtResource("2_5j78g")]
-position = Vector2(227, 148)
-item_type = "Quest Item"
-item_name = "Key"
-item_texture = ExtResource("10_ar32i")
+position = Vector2(413, 32)
+item_type = "Key"
+item_name = "Bronze Key"
+item_texture = ExtResource("4_5soh4")
 item_effect = ""
+
+[node name="Item2" parent="Items" instance=ExtResource("2_5j78g")]
+position = Vector2(-46, 94)
+item_type = "Boost"
+item_name = "Bag"
+item_texture = ExtResource("5_kla16")
+item_effect = "Slot Boost"
 
 [node name="ItemSpawnArea" type="Area2D" parent="."]
 position = Vector2(669, 400)
