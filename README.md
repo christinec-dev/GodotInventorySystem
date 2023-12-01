@@ -1,11 +1,11 @@
 # Godot Inventory System
-This is the final source code for my Godot Inventory System series that I made for my YouTube channel. It consists of a grid-based inventory system where players can add, remove, or use items. 😊
+This is the final source code for my Godot Inventory System series that I made for my YouTube channel. It consists of a slot-based inventory system where players can add, remove, or use items. 😊
 
 ## Outline of Features/Functionalities of this System
 #### Dynamic Inventory Management
 - Players can pick up, use, and drop items.
- Inventory slots display item details and quantities.
- Items have types, effects, and can be stacked based on type and effect.
+- Inventory slots display item details and quantities.
+- Items have types, effects, and can be stacked based on type and effect.
 
 #### Interactive Game World
 - Items can be spawned in the game world.
