@@ -1,6 +1,9 @@
 # Godot Inventory System
 This is the final source code for my Godot Inventory System series that I made for my YouTube channel. It consists of a slot-based inventory system where players can add, remove, or use items. 😊
 
+## Resources
+- [Excalidraw Board](https://excalidraw.com/#json=cjPPFEnlQM-7r-plC8UJ4,iX6E_Q0e7USp2IAlVJQM5g)
+  
 ## Outline of Features/Functionalities of this System
 #### Dynamic Inventory Management
 - Players can pick up, use, and drop items.
@@ -23,9 +26,6 @@ This is the final source code for my Godot Inventory System series that I made f
 #### Global Management
 - Centralized management of inventory and player references.
 - Signals for updating UI when inventory changes.
-
-## Resources
-- [Steps](https://excalidraw.com/#json=cjPPFEnlQM-7r-plC8UJ4,iX6E_Q0e7USp2IAlVJQM5g)
 
 ## Inventory Preview
 ![image](https://github.com/christinec-dev/GodotInventorySystem/assets/87696858/d0c0023f-ce75-4e65-8d2b-93ce11953df3)
