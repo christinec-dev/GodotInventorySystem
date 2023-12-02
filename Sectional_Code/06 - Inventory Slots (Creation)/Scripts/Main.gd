@@ -1,0 +1,2 @@
+### Main.gd
+extends Node
