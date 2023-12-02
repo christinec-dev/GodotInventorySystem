@@ -27,7 +27,7 @@ func _process(_delta):
 	# Add item to inventory if player presses "E" within range
 	if player_in_range and Input.is_action_just_pressed("ui_add"):
 		pickup_item()
-#comment
+
 # Add item to inventory
 func pickup_item():
 	var item = {
@@ -42,29 +42,28 @@ func pickup_item():
 		Global.add_item(item)
 		self.queue_free()
 
-# comment 
 # If player is in range, show UI and make item pickable
 func _on_area_2d_body_entered(body):
 	if body.is_in_group("Player"):
 		player_in_range = true
 		body.interact_ui.visible = true
-		
+
 # If player is in range, hide UI and don't make item pickable
 func _on_area_2d_body_exited(body):
 	if body.is_in_group("Player"):
 		player_in_range = false
 		body.interact_ui.visible = false
 		
-# Set the items values for spawning
-func initiate_items(type, name, effect, texture):
-	item_type = type
-	item_name = name
-	item_effect = effect
-	item_texture = texture
-	
 # Sets the item's dictionary data
 func set_item_data(data):
 	item_type = data["type"]
 	item_name = data["name"]
 	item_effect = data["effect"]
 	item_texture = data["texture"]
+
+# Set the items values for spawning
+func initiate_items(type, name, effect, texture):
+	item_type = type
+	item_name = name
+	item_effect = effect
+	item_texture = texture

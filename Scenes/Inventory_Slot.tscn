@@ -1,14 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://m7ynpurmto7y"]
+[gd_scene load_steps=5 format=3 uid="uid://dqi854bvo43n5"]
 
-[ext_resource type="Script" path="res://Scripts/Inventory_Slot.gd" id="1_2p61u"]
-[ext_resource type="Texture2D" uid="uid://vrb1ndxsqx7k" path="res://Assets/Icons/icon3.png" id="2_bj1on"]
-[ext_resource type="FontFile" uid="uid://bi04iecmbt37l" path="res://Assets/Fonts/ARCADECLASSIC.TTF" id="3_y3fau"]
+[ext_resource type="Script" path="res://Scripts/Inventory_Slot.gd" id="1_jht5t"]
+[ext_resource type="Texture2D" uid="uid://dswd2isskfmyr" path="res://Assets/Assets/Icons/icon10.png" id="2_4edl2"]
+[ext_resource type="FontFile" uid="uid://bi04iecmbt37l" path="res://Assets/Assets/Fonts/ARCADECLASSIC.TTF" id="3_kbu0m"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fudkg"]
-bg_color = Color(0.192157, 0.376471, 0.321569, 0)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7s3e5"]
-bg_color = Color(0.192157, 0.376471, 0.321569, 0.384314)
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_kbdgs"]
 
 [node name="Inventory_Slot" type="Control"]
 custom_minimum_size = Vector2(150, 150)
@@ -18,7 +14,7 @@ offset_left = 10.0
 offset_top = 10.0
 offset_right = 160.0
 offset_bottom = 160.0
-script = ExtResource("1_2p61u")
+script = ExtResource("1_jht5t")
 
 [node name="OuterBorder" type="ColorRect" parent="."]
 layout_mode = 1
@@ -44,18 +40,18 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.611765, 0.603922, 0.584314, 1)
 
-[node name="TextureRect" type="Sprite2D" parent="InnerBorder"]
+[node name="ItemIcon" type="Sprite2D" parent="InnerBorder"]
 position = Vector2(70, 70)
 scale = Vector2(2.5, 2.5)
-texture = ExtResource("2_bj1on")
+texture = ExtResource("2_4edl2")
 
-[node name="QuantityLabel" type="Label" parent="InnerBorder"]
-layout_mode = 1
+[node name="ItemQuantity" type="Label" parent="InnerBorder"]
+layout_mode = 0
 offset_left = 5.0
-offset_right = 38.0
-offset_bottom = 64.0
+offset_right = 45.0
+offset_bottom = 54.0
 theme_override_colors/font_color = Color(0.0745098, 0.0745098, 0.0745098, 1)
-theme_override_fonts/font = ExtResource("3_y3fau")
+theme_override_fonts/font = ExtResource("3_kbu0m")
 theme_override_font_sizes/font_size = 50
 text = "1"
 
@@ -66,8 +62,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_styles/normal = SubResource("StyleBoxFlat_fudkg")
-theme_override_styles/hover = SubResource("StyleBoxFlat_7s3e5")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_kbdgs")
 
 [node name="DetailsPanel" type="ColorRect" parent="."]
 visible = false
@@ -80,12 +75,12 @@ color = Color(0.596078, 0.933333, 0.8, 1)
 [node name="ItemName" type="Label" parent="DetailsPanel"]
 layout_mode = 1
 offset_left = 5.0
-offset_right = 73.0
-offset_bottom = 19.0
+offset_right = 45.0
+offset_bottom = 23.0
 theme_override_colors/font_color = Color(0.0745098, 0.0745098, 0.0745098, 1)
-theme_override_fonts/font = ExtResource("3_y3fau")
+theme_override_fonts/font = ExtResource("3_kbu0m")
 theme_override_font_sizes/font_size = 40
-text = "Item Name"
+text = "Name"
 
 [node name="ItemType" type="Label" parent="DetailsPanel"]
 layout_mode = 1
@@ -93,14 +88,14 @@ anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
 offset_left = 5.0
-offset_top = -9.5
-offset_right = 73.0
-offset_bottom = 9.5
+offset_top = -11.5
+offset_right = 45.0
+offset_bottom = 11.5
 grow_vertical = 2
 theme_override_colors/font_color = Color(0.0745098, 0.0745098, 0.0745098, 0.784314)
-theme_override_fonts/font = ExtResource("3_y3fau")
+theme_override_fonts/font = ExtResource("3_kbu0m")
 theme_override_font_sizes/font_size = 40
-text = "Item Type"
+text = "Type"
 
 [node name="ItemEffect" type="Label" parent="DetailsPanel"]
 layout_mode = 1
@@ -108,13 +103,13 @@ anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
 offset_left = 5.0
-offset_top = -19.0
-offset_right = 90.0
+offset_top = -23.0
+offset_right = 45.0
 grow_vertical = 0
 theme_override_colors/font_color = Color(0.0745098, 0.0745098, 0.0745098, 0.588235)
-theme_override_fonts/font = ExtResource("3_y3fau")
+theme_override_fonts/font = ExtResource("3_kbu0m")
 theme_override_font_sizes/font_size = 40
-text = "Item Effect"
+text = "Effect"
 
 [node name="UsagePanel" type="ColorRect" parent="."]
 visible = false
@@ -132,10 +127,9 @@ anchor_right = 0.5
 offset_left = -115.0
 offset_top = 10.0
 offset_right = 115.0
-offset_bottom = 59.0
+offset_bottom = 53.0
 grow_horizontal = 2
-theme_override_colors/font_color = Color(0.0745098, 0.0745098, 0.0745098, 1)
-theme_override_fonts/font = ExtResource("3_y3fau")
+theme_override_fonts/font = ExtResource("3_kbu0m")
 theme_override_font_sizes/font_size = 40
 text = "Use"
 
@@ -149,16 +143,15 @@ anchor_bottom = 1.0
 offset_left = -115.0
 offset_top = -59.0
 offset_right = 115.0
-offset_bottom = -10.0
+offset_bottom = -16.0
 grow_horizontal = 2
 grow_vertical = 0
-theme_override_colors/font_color = Color(0.0745098, 0.0745098, 0.0745098, 1)
-theme_override_fonts/font = ExtResource("3_y3fau")
+theme_override_fonts/font = ExtResource("3_kbu0m")
 theme_override_font_sizes/font_size = 40
 text = "Drop"
 
-[connection signal="mouse_entered" from="ItemButton" to="." method="_on_button_mouse_entered"]
-[connection signal="mouse_exited" from="ItemButton" to="." method="_on_button_mouse_exited"]
-[connection signal="pressed" from="ItemButton" to="." method="_on_button_pressed"]
+[connection signal="mouse_entered" from="ItemButton" to="." method="_on_item_button_mouse_entered"]
+[connection signal="mouse_exited" from="ItemButton" to="." method="_on_item_button_mouse_exited"]
+[connection signal="pressed" from="ItemButton" to="." method="_on_item_button_pressed"]
 [connection signal="pressed" from="UsagePanel/UseButton" to="." method="_on_use_button_pressed"]
 [connection signal="pressed" from="UsagePanel/DropButton" to="." method="_on_drop_button_pressed"]
