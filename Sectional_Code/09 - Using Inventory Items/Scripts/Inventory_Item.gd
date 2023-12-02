@@ -24,6 +24,9 @@ func _process(_delta):
 	# Set the texture to reflect in the editor
 	if Engine.is_editor_hint():
 		icon_sprite.texture = item_texture
+	# Add item to inventory if player presses "E" within range
+	if player_in_range and Input.is_action_just_pressed("ui_add"):
+		pickup_item()
 
 # Add item to inventory
 func pickup_item():
@@ -44,13 +47,13 @@ func _on_area_2d_body_entered(body):
 	if body.is_in_group("Player"):
 		player_in_range = true
 		body.interact_ui.visible = true
-		
+
 # If player is in range, hide UI and don't make item pickable
 func _on_area_2d_body_exited(body):
 	if body.is_in_group("Player"):
 		player_in_range = false
 		body.interact_ui.visible = false
-
+		
 # Sets the item's dictionary data
 func set_item_data(data):
 	item_type = data["type"]

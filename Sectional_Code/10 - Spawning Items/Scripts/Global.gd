@@ -2,30 +2,26 @@
 
 extends Node
 
-# Scene and node references
-@onready var inventory_slot_scene = preload("res://Scenes/Inventory_Slot.tscn")
-var player_node: Node = null
-
 # Inventory items
 var inventory = []
-var spawnable_items = [
-	{"type": "Consumable", "name": "Berry", "effect": "Health", "texture": preload("res://Assets/Icons/icon31.png")},
-	{"type": "Consumable", "name": "Water", "effect": "Stamina", "texture": preload("res://Assets/Icons/icon9.png")},
-	{"type": "Consumable", "name": "Mushroom", "effect": "Armor", "texture": preload("res://Assets/Icons/icon32.png")},
-	{"type": "Gift", "name": "Gemstone", "effect": "", "texture": preload("res://Assets/Icons/icon21.png")},
-]
 
 # Custom signals
 signal inventory_updated
+var spawnable_items = [
+	{"type": "Consumable", "name": "Berry", "effect": "Health", "texture": preload("res://Assets/Assets/Icons/icon31.png")},
+	{"type": "Consumable", "name": "Water", "effect": "Stamina", "texture": preload("res://Assets/Assets/Icons/icon9.png")},
+	{"type": "Consumable", "name": "Mushroom", "effect": "Armor", "texture": preload("res://Assets/Assets/Icons/icon32.png")},
+	{"type": "Gift", "name": "Gemstone", "effect": "", "texture": preload("res://Assets/Assets/Icons/icon21.png")},
+]
+
+# Scene and node references
+var player_node: Node = null
+@onready var inventory_slot_scene = preload("res://Scenes/Inventory_Slot.tscn")
 
 func _ready(): 
 	# Initializes the inventory with 30 slots (spread over 9 blocks per row)
 	inventory.resize(30) 
-	
-# Sets the player reference for inventory interactions
-func set_player_reference(player):
-	player_node = player
-	
+
 # Adds an item to the inventory, returns true if successful
 func add_item(item):
 	for i in range(inventory.size()):
@@ -58,14 +54,9 @@ func increase_inventory_size(extra_slots):
 	inventory.resize(inventory.size() + extra_slots)
 	inventory_updated.emit()
 
-# Drops an item at a specified position, adjusting for nearby items
-func drop_item(item_data, drop_position):
-	var item_scene = load(item_data["scene_path"])
-	var item_instance = item_scene.instantiate()
-	item_instance.set_item_data(item_data)
-	drop_position = adjust_drop_position(drop_position)
-	item_instance.global_position = drop_position
-	get_tree().current_scene.add_child(item_instance)
+# Sets the player reference for inventory interactions
+func set_player_reference(player):
+	player_node = player
 
 # Adjusts the drop position to avoid overlapping with nearby items
 func adjust_drop_position(position):
@@ -77,3 +68,15 @@ func adjust_drop_position(position):
 			position += random_offset
 			break
 	return position
+
+# Drops an item at a specified position, adjusting for nearby items
+func drop_item(item_data, drop_position):
+	var item_scene = load(item_data["scene_path"])
+	var item_instance = item_scene.instantiate()
+	item_instance.set_item_data(item_data)
+	drop_position = adjust_drop_position(drop_position)
+	item_instance.global_position = drop_position
+	get_tree().current_scene.add_child(item_instance)
+
+
+

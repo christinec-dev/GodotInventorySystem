@@ -2,9 +2,9 @@
 extends CharacterBody2D
 
 # Scene-Tree Node references
-@onready var inventory_ui = $InventoryUI
+@onready var animated_sprite = $AnimatedSprite2D
 @onready var interact_ui = $InteractUI
-@onready var animated_sprite = $AnimatedSprite 
+@onready var inventory_ui = $InventoryUI
 
 # Variables
 @export var speed = 200
@@ -23,7 +23,7 @@ func _physics_process(delta):
 	get_input()
 	move_and_slide()
 	update_animation()
-
+	
 # Animation
 func update_animation():
 	if velocity == Vector2.ZERO:
@@ -54,6 +54,7 @@ func apply_item_effect(item):
 			print("Speed increased to ", speed)
 		"Slot Boost":
 			Global.increase_inventory_size(5)
-			print("Inventory increased to ", Global.inventory.size())
+			print("Slots increased to ", Global.inventory.size())
 		_:
-			print("No effect for this item")
+			print("There is no effect for this item")
+			
