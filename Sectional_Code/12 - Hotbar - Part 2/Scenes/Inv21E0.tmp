@@ -1,0 +1,26 @@
+[gd_scene load_steps=3 format=3 uid="uid://bxbnos3drxhfp"]
+
+[ext_resource type="Script" path="res://Scripts/Inventory_UI.gd" id="1_ybuun"]
+[ext_resource type="PackedScene" uid="uid://xp38ekmolgts" path="res://Scenes/Inventory_Hotbar.tscn" id="2_v4gxy"]
+
+[node name="InventoryUI" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+script = ExtResource("1_ybuun")
+
+[node name="GridContainer" type="GridContainer" parent="."]
+layout_mode = 0
+offset_left = 200.0
+offset_top = 200.0
+offset_right = 1000.0
+offset_bottom = 600.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/h_separation = 20
+theme_override_constants/v_separation = 20
+columns = 9
+
+[node name="Inventory_Hotbar" parent="." instance=ExtResource("2_v4gxy")]
+layout_mode = 1
