@@ -102,6 +102,17 @@ func add_hotbar_item(item):
 func remove_hotbar_item(item_type, item_effect):
 	for i in range(hotbar_inventory.size()):
 		if hotbar_inventory[i] != null and hotbar_inventory[i]["type"] == item_type and hotbar_inventory[i]["effect"] == item_effect:
+			if hotbar_inventory[i]["quantity"] <= 0:
+				hotbar_inventory[i] = null
+			inventory_updated.emit()
+			return true
+	return false
+
+# Unassigns an item from the hotbar
+func unassign_hotbar_item(item_type, item_effect):
+	for i in range(hotbar_inventory.size()):
+		if hotbar_inventory[i] != null and hotbar_inventory[i]["type"] == item_type and hotbar_inventory[i]["effect"] == item_effect:
 			hotbar_inventory[i] = null
 			inventory_updated.emit()
-			return
+			return true
+	return false
